@@ -1,0 +1,257 @@
+Microsoft Windows [Version 10.0.19045.4170]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\1570130\ado-eclipse-workspace_release\junitParallel>mvn clean verify
+[WARNING]
+[WARNING] Some problems were encountered while building the effective settings
+[WARNING] 'proxies.proxy.id' must be unique but found duplicate proxy with id optional @ C:\Users\1570130\.m2\settings.xml
+[WARNING]
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ---------------------< com.cucumber:junitParallel >---------------------
+[INFO] Building junitParallel 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ junitParallel ---
+[INFO] Deleting C:\Users\1570130\ado-eclipse-workspace_release\junitParallel\target
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ junitParallel ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\1570130\ado-eclipse-workspace_release\junitParallel\src\main\resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ junitParallel ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\1570130\ado-eclipse-workspace_release\junitParallel\target\classes
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ junitParallel ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO]
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ junitParallel ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 11 source files to C:\Users\1570130\ado-eclipse-workspace_release\junitParallel\target\test-classes
+[INFO]
+[INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ junitParallel ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running Forgot Password Page
+
+@BackFunctionality
+Scenario: Validate the cancel functionality - Feature 2, Scenario - 1 # src/test/resources/features/ForgotPasswordPage.feature:7
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Apr 17, 2024 3:34:55 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+  Given User is on Home page                                          # com.cucumber.junitParallel.definitions.LoginPageDefinitions.loginTest()
+  When User clicks on Forgot your password? link                      # com.cucumber.junitParallel.definitions.ForgotPasswordPageDefinitions.forgotP
+asswordLink()
+  Then User should be able to navigate to Reset Password page         # com.cucumber.junitParallel.definitions.ForgotPasswordPageDefinitions.verifyF
+orgotPasswordPage()
+  And User clicks on Cancel button to go back to Login Page           # com.cucumber.junitParallel.definitions.ForgotPasswordPageDefinitions.verifyC
+ancelBtn()
+
+@ResetFunctionality
+Scenario: Validate the Reset Password functionality - Feature 2, Scenario - 2 # src/test/resources/features/ForgotPasswordPage.feature:14
+Apr 17, 2024 3:35:14 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+  Given User is on Home page                                                  # com.cucumber.junitParallel.definitions.LoginPageDefinitions.loginTes
+t()
+  When User clicks on Forgot your password? link                              # com.cucumber.junitParallel.definitions.ForgotPasswordPageDefinitions
+.forgotPasswordLink()
+  Then User should be able to navigate to Reset Password page                 # com.cucumber.junitParallel.definitions.ForgotPasswordPageDefinitions
+.verifyForgotPasswordPage()
+  And User clicks on Reset Password button and provide username as "abc1234"  # com.cucumber.junitParallel.definitions.ForgotPasswordPageDefinitions
+.verifyResetPasswordBtn(java.lang.String)
+  And Verify the message "Reset Password link sent successfully"              # com.cucumber.junitParallel.definitions.ForgotPasswordPageDefinitions
+.verifyMessage(java.lang.String)
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.711 s - in Forgot Password Page
+[INFO] ┌───────────────────────────────────────────────────────────────────────────────────┐
+│ Share your Cucumber Report with your team at https://reports.cucumber.io          │
+│ Activate publishing with one of the following:                                    │
+│                                                                                   │
+│ src/test/resources/cucumber.properties:          cucumber.publish.enabled=true    │
+│ src/test/resources/junit-platform.properties:    cucumber.publish.enabled=true    │
+│ Environment variable:                            CUCUMBER_PUBLISH_ENABLED=true    │
+│ JUnit:                                           @CucumberOptions(publish = true) │
+│                                                                                   │
+│ More information at https://cucumber.io/docs/cucumber/environment-variables/      │
+│                                                                                   │
+│ Disable this message with one of the following:                                   │
+│                                                                                   │
+│ src/test/resources/cucumber.properties:          cucumber.publish.quiet=true      │
+│ src/test/resources/junit-platform.properties:    cucumber.publish.quiet=true      │
+└───────────────────────────────────────────────────────────────────────────────────┘
+[INFO] Running Login to HRM Application
+
+@ValidCredentials
+Scenario: Login with valid credentials - Feature 1, Scenario - 1  # src/test/resources/features/LoginPage.feature:7
+Apr 17, 2024 3:34:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+  Given User is on Home page                                      # com.cucumber.junitParallel.definitions.LoginPageDefinitions.loginTest()
+  When User enters username as "Admin" and password as "admin123" # com.cucumber.junitParallel.definitions.LoginPageDefinitions.goToHomePage(java.la
+ng.String,java.lang.String)
+  Then User should be able to login successfully                  # com.cucumber.junitParallel.definitions.LoginPageDefinitions.verifyLogin()
+
+@InvalidCredentials
+Scenario Outline: Login with invalid credentials - Feature 1, Scenario - 2 # src/test/resources/features/LoginPage.feature:20
+Apr 17, 2024 3:35:14 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+  Given User is on Home page                                               # com.cucumber.junitParallel.definitions.LoginPageDefinitions.loginTest()
+  When User enters username as "Admin" and password as "admin12$$"         # com.cucumber.junitParallel.definitions.LoginPageDefinitions.goToHomePag
+e(java.lang.String,java.lang.String)
+  Then User should be able to see error message "Invalid credentials"      # com.cucumber.junitParallel.definitions.LoginPageDefinitions.verifyError
+Message(java.lang.String)
+
+@InvalidCredentials
+Scenario Outline: Login with invalid credentials - Feature 1, Scenario - 2 # src/test/resources/features/LoginPage.feature:21
+Apr 17, 2024 3:35:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+  Given User is on Home page                                               # com.cucumber.junitParallel.definitions.LoginPageDefinitions.loginTest()
+  When User enters username as "admin$$" and password as "admin123"        # com.cucumber.junitParallel.definitions.LoginPageDefinitions.goToHomePag
+e(java.lang.String,java.lang.String)
+  Then User should be able to see error message "Invalid credentials"      # com.cucumber.junitParallel.definitions.LoginPageDefinitions.verifyError
+Message(java.lang.String)
+
+@InvalidCredentials
+Scenario Outline: Login with invalid credentials - Feature 1, Scenario - 2 # src/test/resources/features/LoginPage.feature:22
+Apr 17, 2024 3:35:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+  Given User is on Home page                                               # com.cucumber.junitParallel.definitions.LoginPageDefinitions.loginTest()
+  When User enters username as "abc123" and password as "xyz$$"            # com.cucumber.junitParallel.definitions.LoginPageDefinitions.goToHomePag
+e(java.lang.String,java.lang.String)
+  Then User should be able to see error message "Invalid credentials"      # com.cucumber.junitParallel.definitions.LoginPageDefinitions.verifyError
+Message(java.lang.String)
+
+@InvalidCredentials
+Scenario Outline: Login with invalid credentials - Feature 1, Scenario - 2 # src/test/resources/features/LoginPage.feature:23
+Apr 17, 2024 3:35:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 116, so returning the closest version found: 115
+  Given User is on Home page                                               # com.cucumber.junitParallel.definitions.LoginPageDefinitions.loginTest()
+  When User enters username as "" and password as "xyz$$"                  # com.cucumber.junitParallel.definitions.LoginPageDefinitions.goToHomePag
+e(java.lang.String,java.lang.String)
+  Then User should be able to see error message "Invalid credentials"      # com.cucumber.junitParallel.definitions.LoginPageDefinitions.verifyError
+Message(java.lang.String)
+      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='app']/div[1]/div
+/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"}
+  (Session info: chrome=116.0.5845.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f2d2d599cd2d9a4f7af9249ac4969d3e, findElement {using=xpath, value=//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.97, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166
+880..., userDataDir: C:\Users\1570130\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59820}, networkConnectio
+nEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59820/devtoo..., se:cdpVersion: 116.0.5845.
+97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismis
+s and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf:
+true, webauthn:virtualAuthenticators: true}
+Session ID: f2d2d599cd2d9a4f7af9249ac4969d3e
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+        at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+        at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+        at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+        at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+        at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+        at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+        at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+        at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+        at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+        at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+        at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+        at com.cucumber.junitParallel.pages.LoginPage.getErrorMessage(LoginPage.java:22)
+        at com.cucumber.junitParallel.definitions.LoginPageDefinitions.verifyErrorMessage(LoginPageDefinitions.java:56)
+        at â?½.User should be able to see error message "Invalid credentials"(file:///C:/Users/1570130/ado-eclipse-workspace_release/junitParallel/s
+rc/test/resources/features/LoginPage.feature:16)
+
+
+    Embedding image [image/png 73693 bytes]
+
+[ERROR] Tests run: 5, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 91.145 s <<< FAILURE! - in Login to HRM Application
+[ERROR] Login to HRM Application.Login with invalid credentials - Feature 1, Scenario - 2 #4  Time elapsed: 22.497 s  <<< ERROR!
+org.openqa.selenium.NoSuchElementException:
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"}
+  (Session info: chrome=116.0.5845.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f2d2d599cd2d9a4f7af9249ac4969d3e, findElement {using=xpath, value=//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.97, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166
+880..., userDataDir: C:\Users\1570130\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59820}, networkConnectio
+nEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59820/devtoo..., se:cdpVersion: 116.0.5845.
+97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismis
+s and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf:
+true, webauthn:virtualAuthenticators: true}
+Session ID: f2d2d599cd2d9a4f7af9249ac4969d3e
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+        at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+        at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+        at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+        at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+        at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+        at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+        at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+        at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+        at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+        at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+        at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+        at com.cucumber.junitParallel.pages.LoginPage.getErrorMessage(LoginPage.java:22)
+        at com.cucumber.junitParallel.definitions.LoginPageDefinitions.verifyErrorMessage(LoginPageDefinitions.java:56)
+        at ?.User should be able to see error message "Invalid credentials"(file:///C:/Users/1570130/ado-eclipse-workspace_release/junitParallel/src
+/test/resources/features/LoginPage.feature:16)
+
+[INFO] Running com.cucumber.junitParallel.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.cucumber.junitParallel.AppTest
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Errors: 
+[ERROR]   no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div
+[1]/p"}
+  (Session info: chrome=116.0.5845.97)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f2d2d599cd2d9a4f7af9249ac4969d3e, findElement {using=xpath, value=//*[@id='app']/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.97, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166
+880..., userDataDir: C:\Users\1570130\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59820}, networkConnectio
+nEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59820/devtoo..., se:cdpVersion: 116.0.5845.
+97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismis
+s and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf:
+true, webauthn:virtualAuthenticators: true}
+Session ID: f2d2d599cd2d9a4f7af9249ac4969d3e
+[INFO]
+[ERROR] Tests run: 8, Failures: 0, Errors: 1, Skipped: 0
+[INFO]
+[ERROR]
+
+Please refer to C:\Users\1570130\ado-eclipse-workspace_release\junitParallel\target\surefire-reports for the individual test results.
+Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[INFO]
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ junitParallel ---
+[INFO] Building jar: C:\Users\1570130\ado-eclipse-workspace_release\junitParallel\target\junitParallel-0.0.1-SNAPSHOT.jar
+[INFO]
+[INFO] --- maven-cucumber-reporting:5.6.0:generate (execution) @ junitParallel ---
+[INFO] About to generate Cucumber report.
+Apr 17, 2024 3:36:16 PM net.masterthought.cucumber.ReportParser parseJsonFiles
+INFO: File 'C:\Users\1570130\ado-eclipse-workspace_release\junitParallel\target\report\cucumber.json' contains 2 features
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:11 min
+[INFO] Finished at: 2024-04-17T15:36:17+05:30
+[INFO] ------------------------------------------------------------------------
+
